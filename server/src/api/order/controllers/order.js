@@ -1,17 +1,10 @@
 "use strict";
-//@ts-ignore
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-console.log(stripe);
-
-/**
- * order controller
- */
 
 const { createCoreController } = require("@strapi/strapi").factories;
 
 module.exports = createCoreController("api::order.order", ({ strapi }) => ({
   async create(ctx) {
-    //@ts-ignore
     const { products, userName, email } = ctx.request.body;
     try {
       // retrieve item information
