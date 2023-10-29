@@ -47,11 +47,12 @@ const Checkout = () => {
       })),
     };
 
-    const response = await fetch(`http://localhost:1337/api/order`, {
+    const response = await fetch(`http://localhost:1337/api/orders`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(requestBody),
     });
+    console.log(response);
     const session = await response.json();
     await stripe.redirectToCheckout({
       sessionId: session.id,

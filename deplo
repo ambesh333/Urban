@@ -1,0 +1,2 @@
+cd server npm run develop
+cd client npm run start
